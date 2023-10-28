@@ -22,3 +22,15 @@ jobs:
 
       - name: Push image to DigitalOcean Container Registry
         run: docker push registry.digitalocean.com/containers/devcamp2023-hehe:$(echo $GITHUB_SHA | head -c7)
+
+      - name: Setup kubectl
+        uses: matootie/dokube@v1.3.4
+        with:
+          clusterName: k8s-bergen
+          personalAccessToken: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
+
+      - name: Run deploy
+        run: kubectl apply -f $GITHUB_WORKSPACE/config/deployment.yml
+
+      - name: Verify deploy
+        run: kubectl rollout status deployment/devcamp2023-hehe

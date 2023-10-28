@@ -1,0 +1,23 @@
+namespace: apps
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devcamp2023-hehe
+  labels:
+    app: devcamp2023-hehe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devcamp2023-hehe
+  template:
+    metadata:
+      labels:
+        app: devcamp2023-hehe
+    spec:
+      containers:
+        - name: devcamp2023-hehe
+          image: devcamp2023-hehe:latest
+          ports:
+            - containerPort: 80
