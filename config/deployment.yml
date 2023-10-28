@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: devcamp2023-hehe
+  namespace: apps
   labels:
     app: devcamp2023-hehe
 spec:
@@ -15,7 +16,7 @@ spec:
         app: devcamp2023-hehe
     spec:
       containers:
-        - name: registry.digitalocean.com/containers/devcamp2023-hehe
-          image: <IMAGE>
+        - name: devcamp2023-hehe
+          image: registry.digitalocean.com/containers/devcamp2023-hehe:<TAG>
           ports:
             - containerPort: 80
