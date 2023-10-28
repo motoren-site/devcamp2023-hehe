@@ -33,9 +33,9 @@ jobs:
         run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|<TAG>|'${TAG}'|' $GITHUB_WORKSPACE/config/deployment.yml
 
       - name: Run deploy
-        run: kubectl apply -f $GITHUB_WORKSPACE/config/deployment.yml
+        run: kubectl apply -f $GITHUB_WORKSPACE/config/deployment.yml -n apps
 
       - name: Verify deploy
-        run: kubectl rollout status deployment/devcamp2023-hehe
+        run: kubectl rollout status deployment/devcamp2023-hehe -n apps
         timeout-minutes: 1
         continue-on-error: true
