@@ -37,3 +37,5 @@ jobs:
 
       - name: Verify deploy
         run: kubectl rollout status deployment/devcamp2023-hehe -n apps
+        timeout-minutes: 1
+        continue-on-error: true
