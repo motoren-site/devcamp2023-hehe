@@ -30,7 +30,7 @@ jobs:
           personalAccessToken: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
 
       - name: Run deploy
-        run: kubectl apply -f $GITHUB_WORKSPACE/config/deployment.yml
+        run: kubectl apply -f $GITHUB_WORKSPACE/config/deployment.yml -n apps
 
       - name: Verify deploy
         run: kubectl rollout status deployment/devcamp2023-hehe
