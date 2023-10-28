@@ -15,7 +15,7 @@ spec:
         app: devcamp2023-hehe
     spec:
       containers:
-        - name: devcamp2023-hehe
+        - name: registry.digitalocean.com/containers/devcamp2023-hehe
           image: <IMAGE>
           ports:
             - containerPort: 80
