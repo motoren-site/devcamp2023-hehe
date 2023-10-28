@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: devcamp2023-hehe
-          image: devcamp2023-hehe:<IMAGE>
+          image: <IMAGE>
           ports:
             - containerPort: 80
