@@ -11,7 +11,7 @@ spec:
     - host: app.ostepopp.site
       http:
         paths:
-          - path: /devcamp2023-hehe
+          - path: "/devcamp2023-hehe(/|$)(.*)"
             pathType: Prefix
             backend:
               service:
