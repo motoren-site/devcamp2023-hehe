@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devcamp2023-hehe
+  name: devcamp2023-hehe-deployment
   labels:
     app: devcamp2023-hehe
 spec:
