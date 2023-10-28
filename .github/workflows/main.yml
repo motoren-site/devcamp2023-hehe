@@ -29,6 +29,9 @@ jobs:
           clusterName: k8s-bergen
           personalAccessToken: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
 
+      - name: Update deployment file
+        run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|<IMAGE>|devcamp2023-hehe:'${TAG}'|' $GITHUB_WORKSPACE/config/deployment.yml
+
       - name: Run deploy
         run: kubectl apply -f $GITHUB_WORKSPACE/config/deployment.yml -n apps
 
